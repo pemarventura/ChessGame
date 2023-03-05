@@ -15,7 +15,5 @@
         {
             return Line + "," + Column ;
         }
-
-
     }
 }
