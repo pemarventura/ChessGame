@@ -1,7 +1,7 @@
 ﻿
 namespace board
 {
-    class Colors
+    public class Colors
     {
         enum Color
         {

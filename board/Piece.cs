@@ -1,7 +1,7 @@
 ﻿
 namespace board
 {
-    class Piece
+    public class Piece
     {
         public Position Position { get; set; }
         public Colors Color { get; protected set; }
