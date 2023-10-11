@@ -4,18 +4,16 @@ namespace board
     public class Piece
     {
         public Position Position { get; set; }
-        public Colors Color { get; protected set; }
+        public Color Color { get; protected set; }
         public int qntMovements { get; protected set; }
         public GameBoard gameBoard {  get; protected set; }
 
-        public Piece(Position position, Colors color, GameBoard gameBoard)
+        public Piece(Color color, GameBoard gameBoard)
         {
-            Position = position;
-            Color = color;
+            this.Position = null;
+            this.Color = color;
             this.qntMovements = 0;
             this.gameBoard = gameBoard;
         }
-
-
     }
 }

@@ -8,9 +8,17 @@ namespace chess_console
     {
         public static void Main(string[] args)
         {
-            GameBoard GameBoard = new GameBoard(8, 8);
+            try
+            {
+                GameBoard GameBoard = new GameBoard(8, 8);
 
-            Screen.PrintBoard(GameBoard);
+                Screen.PrintBoard(GameBoard);
+            }
+
+            catch (GameBoardException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

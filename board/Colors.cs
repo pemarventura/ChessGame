@@ -1,15 +1,12 @@
 ﻿
 namespace board
 {
-    public class Colors
+    public enum Color
     {
-        enum Color
-        {
-            White,
-            Black,
-            Yellow,
-            Blue,
-            Green
-        }
+        White,
+        Black,
+        Yellow,
+        Blue,
+        Green
     }
 }
