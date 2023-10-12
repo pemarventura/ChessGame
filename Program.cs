@@ -18,6 +18,8 @@ namespace chess_console
                     try
                     {
                         Console.Clear();
+                        Screen.printMatch(chessMatch);
+
                         Screen.PrintBoard(chessMatch.board);
                         Console.WriteLine();
                         Console.WriteLine("Turn: " + chessMatch.turn);
