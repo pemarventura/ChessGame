@@ -9,7 +9,7 @@ namespace board
         public int lines { get; set; }
         public int rows { get; set; }
 
-        private Piece[,] pieces;
+        public Piece[,] pieces;
 
         public GameBoard(int lines, int rows) 
         {
@@ -35,6 +35,21 @@ namespace board
             }
             pieces[pos.Line, pos.Column] = p;
             p.Position = pos;
+        }
+
+        public Piece removePiece( Position pos) 
+        {
+           if (piece(pos) == null)
+            {
+                return null;
+           }
+
+           Piece aux = piece(pos);
+
+            aux.Position = null;
+            pieces[pos.Line, pos.Column] = null;
+            return aux;
+
         }
 
         public bool existingPiece(Position pos)
