@@ -18,8 +18,22 @@ namespace chess_console
             printCapturedPieces(match);
 
             Console.WriteLine();
+            if (!match.finished)
+            {
+                Console.WriteLine("Turn: " + match.turn);
+                //Console.WriteLine("Waiting play: " + match.cu)
+                if (match.check)
+                {
+                    Console.WriteLine("Check!");
+                }
+            }
 
-            Console.WriteLine("Turn: " +  match.turn);
+            else
+            {
+                Console.WriteLine("Checkmate!");
+                Console.WriteLine("Winner: ");
+            }
+           
             
 
         }

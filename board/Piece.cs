@@ -21,6 +21,11 @@ namespace board
             qntMovements++;
         }
 
+        public void decreaseMovements()
+        {
+            qntMovements--;
+        }
+
         public bool thereArePossibleMovements()
         {
             bool[,] matrix = possibleMovements();
@@ -37,7 +42,7 @@ namespace board
             return false;
         }
 
-        public bool canMoveTo(Position pos)
+        public bool possibleMovement(Position pos)
         {
             return possibleMovements()[pos.Line,pos.Column];
         }
