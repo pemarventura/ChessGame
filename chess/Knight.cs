@@ -27,40 +27,66 @@ namespace chess_console.chess
         public override bool[,] possibleMovements()
         {
             bool[,] matrix = new bool[gameBoard.lines, gameBoard.rows];
+
             Position pos = new Position(0, 0);
 
-            pos.defineValues(Position.Line - 1, Position.Column - 1);
-            while (gameBoard.validatePosition(pos) && canMove(pos))
+            pos.defineValues(Position.Line - 1, Position.Column - 2);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
             {
                 matrix[pos.Line, pos.Column] = true;
-                if (gameBoard.piece(pos) != null && gameBoard.piece(pos).Color != this.Color)
-                {
-                    break;
-                }
-                pos.defineValues(pos.Line - 1, pos.Column - 1);
             }
 
-            pos.defineValues(Position.Line - 1, Position.Column + 1);
-            while (gameBoard.validatePosition(pos) && canMove(pos))
+            pos.defineValues(Position.Line - 2, Position.Column - 1);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
             {
                 matrix[pos.Line, pos.Column] = true;
-                if (gameBoard.piece(pos) != null && gameBoard.piece(pos).Color != this.Color)
-                {
-                    break;
-                }
-                pos.defineValues(pos.Line - 1, pos.Column + 1);
             }
 
-            pos.defineValues(Position.Line + 1, Position.Column + 1);
-            while (gameBoard.validatePosition(pos) && canMove(pos))
+            pos.defineValues(Position.Line - 2, Position.Column + 1);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
             {
                 matrix[pos.Line, pos.Column] = true;
-                if (gameBoard.piece(pos) != null && gameBoard.piece(pos).Color != this.Color)
-                {
-                    break;
-                }
-                pos.defineValues(pos.Line + 1, pos.Column + 1);
             }
+
+            pos.defineValues(Position.Line - 1, Position.Column + 2);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
+            {
+                matrix[pos.Line, pos.Column] = true;
+            }
+
+            pos.defineValues(Position.Line + 1, Position.Column + 2);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
+            {
+                matrix[pos.Line, pos.Column] = true;
+            }
+
+            pos.defineValues(Position.Line + 2, Position.Column + 1);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
+            {
+                matrix[pos.Line, pos.Column] = true;
+            }
+
+            pos.defineValues(Position.Line + 2, Position.Column - 1);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
+            {
+                matrix[pos.Line, pos.Column] = true;
+            }
+
+            pos.defineValues(Position.Line + 1, Position.Column - 2);
+
+            if (gameBoard.validatePosition(pos) && canMove(pos))
+            {
+                matrix[pos.Line, pos.Column] = true;
+            }
+
+
 
             return matrix;
         }
